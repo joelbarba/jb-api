@@ -10,7 +10,7 @@ type Data = {
 let fileData = 'file';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  fileData = fileData + `  -  ` + (new Date() + '').slice(16, 24);
+  fileData = fileData + `  -  AAA`;
 
   res.status(200).json({ 
     name: 'API Works',
