@@ -3,11 +3,17 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
   name: string;
+  fileData: string;
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
-  res.status(200).json({ name: "John Doe" });
+
+let fileData = 'file';
+
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  fileData = fileData + `  -  ` + (new Date() + '').slice(16, 24);
+
+  res.status(200).json({ 
+    name: 'API Works',
+    fileData: fileData,
+  });
 }
